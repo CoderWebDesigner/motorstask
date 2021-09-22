@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-lg-4">
+    <!-- Select chart -->
+    <div class="select-chart">
+
+      <div class="form-check" *ngFor="let chart of chartsArray">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" [value]="chart.id"
+          (change)="radioChangeHandler($event)">
+        <label class="form-check-label" for="flexRadioDefault1">
+            <img [src]="chart.path" alt="" class="w-50 d-inline-block float-left">
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <!-- Preview chart -->
+    <div class="preview border">
+      <h4 class="font-weight-bold text-center p-2 border">Preview</h4>
+      <div class="preview-chart">
+        <div [ngSwitch]="chartId">
+            <div *ngSwitchCase="'1'">
+                <ngx-charts-bar-vertical [view]="[1000,400]" [results]="data" [xAxisLabel]="'Products'"
+                [legendTitle]="'Product Sale Chart'" [yAxisLabel]="'Sale'" [legend]="true" [showXAxisLabel]="true"
+                [showYAxisLabel]="true" [xAxis]="true" [yAxis]="true" [gradient]="true" class="w-100">
+              </ngx-charts-bar-vertical>
+            </div>
+            <div *ngSwitchCase="'2'">
+                <ngx-charts-pie-chart [results]="data" [legend]="true" [legendTitle]="'Product Sale Report'"
+              [view]="[1000,300]" [labels]="true" class="w-100">
+            </ngx-charts-pie-chart>
+            </div>
+            <div *ngSwitchCase="'3'"><ngx-charts-advanced-pie-chart [results]="data" [gradient]="true" class="w-100">
+            </ngx-charts-advanced-pie-chart></div>
+            <div *ngSwitchDefault class="text-center p-5">Select Chart</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

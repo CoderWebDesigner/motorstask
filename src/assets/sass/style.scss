@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "~ngx-bootstrap/datepicker/bs-datepicker";
+@import 'helper/variables';
+@import 'helper/framework';
+
+@import 'layout/header';
+
+
+@import 'pages/doctors';
+@font-face {
+    font-family: "Dubai Light";
+    src: url("../font/DubaiW23-Light.ttf") format('truetype');
+}
+@font-face {
+    font-family: "Dubai Medium";
+    src: url("../font/DubaiW23-Medium.ttf") format('truetype');
+}
+@font-face {
+    font-family: "Dubai Regular";
+    src: url("../font/DubaiW23-Regular.ttf") format('truetype');
+}
+@font-face {
+    font-family: "Dubai Bold";
+    src: url("../font/DubaiW23-Bold.ttf") format('truetype');
+}
+body{
+    font-family: "Dubai Light";
+    background: $mainBgColor;
+}
+
